@@ -11,6 +11,7 @@ Zusätzlich ist aktuell bereits ein weiteres Verhalten direkt in das Bewegungssc
 Diese Lösung funktioniert, ist aber auf Dauer **schwer erweiterbar**.
 
 ---
+luca war hier
 
 ## Problem
 
