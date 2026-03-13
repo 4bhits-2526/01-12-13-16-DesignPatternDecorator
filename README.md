@@ -66,6 +66,73 @@ Baut das Projekt so um, dass:
 - Erweiterungen **nicht direkt in der Bewegungsklasse** implementiert werden
 - zusätzliche Effekte über **Decorator-Klassen** hinzugefügt werden können
 
+```mermaid
+classDiagram
+
+class IMovable {
+    <<interface>>
+    +Move()
+}
+
+class BaseMovement {
+    -pointA
+    -pointB
+    -speed
+    +Move()
+}
+
+IMovable <|.. BaseMovement
+
+class MovementDecorator {
+    <<abstract>>
+    -component: IMovable
+    +Move()
+}
+
+IMovable <|.. MovementDecorator
+MovementDecorator o-- IMovable
+
+class RotateDecorator {
+    +Move()
+}
+
+class ColorDecorator {
+    +Move()
+}
+
+class GlowDecorator {
+    +Move()
+}
+
+class ScaleDecorator {
+    +Move()
+}
+
+class TrailDecorator {
+    +Move()
+}
+
+class SoundDecorator {
+    +Move()
+}
+
+class SpeedDecorator {
+    +Move()
+}
+
+class DebugDecorator {
+    +Move()
+}
+
+MovementDecorator <|-- RotateDecorator
+MovementDecorator <|-- ColorDecorator
+MovementDecorator <|-- GlowDecorator
+MovementDecorator <|-- ScaleDecorator
+MovementDecorator <|-- TrailDecorator
+MovementDecorator <|-- SoundDecorator
+MovementDecorator <|-- SpeedDecorator
+MovementDecorator <|-- DebugDecorator
+```
 ---
 
 # Teil 3 – Decorator implementieren
